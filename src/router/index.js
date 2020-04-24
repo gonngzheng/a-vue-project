@@ -8,11 +8,11 @@ Vue.use(Router)
 
 export default new Router({
   routes: [
-    {
-      path: '/',
-      name: 'HelloWorld',
-      component: Login 
-    },
+    // {
+    //   path: '/',
+    //   name: 'HelloWorld',
+    //   component: Login 
+    // },
     {
       path: '/login',
       name: 'login',
