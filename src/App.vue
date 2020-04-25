@@ -46,8 +46,11 @@
     </mt-button>
     <mt-button @click.native="handleClick">点击触发 handleClick</mt-button> -->
 
-  
-    <router-view/>
+    <transition>
+      <router-view/>
+
+    </transition>
+
   </div>
 </template>
 
@@ -83,6 +86,7 @@ export default {
   /* text-align: center; */
   color: #2c3e50;
   margin-top: 40px;
+  overflow: hidden;
 }
 h1{
   color:red;
@@ -95,5 +99,18 @@ h1{
 }
 .active{
   color:blue
+}
+
+.v-enter{
+  opacity: 0;
+  transform: translateX(100%);
+}
+.v-leave-to{
+  opacity: 0;
+  transform: translateX(-100%);
+  position:absolute;
+}
+.v-enter-active, .v-leave-active{
+  transition: all 0.4s;
 }
 </style>
