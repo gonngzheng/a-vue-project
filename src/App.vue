@@ -1,15 +1,37 @@
 <template>
   <div id="app">
-    <mt-header fixed title="固定在顶部">
-      <router-link to="/" slot="left">
-      <mt-button icon="back">返回</mt-button>
-  </router-link>
-  <mt-button icon="more" slot="right"></mt-button>
-    </mt-header>
+    <h3>这是App根组件</h3>
     <!-- <img src="./assets/logo.png"> -->
-    <router-link to="/login">点击登录</router-link>
-    <router-link to="/reg">点击注册</router-link>
-    <h2>sd</h2>
+    
+       <mt-header fixed title="我的vue项目">
+      <span slot="left">
+      <mt-button icon="back">返回</mt-button>
+  </span>
+  <!-- <mt-button icon="more" slot="right"></mt-button> -->
+    </mt-header>
+
+    <!-- tabbar区域 -->
+  <nav class="mui-bar mui-bar-tab">
+			<router-link class="mui-tab-item" to="/home">
+				<span class="mui-icon mui-icon-home"></span>
+				<span class="mui-tab-label">首页</span>
+			</router-link>
+			<router-link class="mui-tab-item" to="/member">
+				<span class="mui-icon mui-icon-email"></span>
+				<span class="mui-tab-label">会员</span>
+			</router-link>
+			<router-link class="mui-tab-item" to="/shopcar">
+				<span class="mui-icon mui-icon-extra mui-icon-extra-cart"><span class="mui-badge">9</span></span>
+				<span class="mui-tab-label">购物车</span>
+			</router-link>
+			<router-link class="mui-tab-item" to="/search">
+				<span class="mui-icon mui-icon-search"></span>
+				<span class="mui-tab-label">搜索</span>
+			</router-link>
+		</nav>
+    <!-- <router-link to="/login">点击登录</router-link> -->
+    <!-- <router-link to="/reg">点击注册</router-link> -->
+    <!-- <h2>sd</h2>
     <mt-button type="default">default</mt-button>
     <mt-button type="primary">primary</mt-button>
     <mt-button type="danger">danger</mt-button>
@@ -22,27 +44,9 @@
       <img src="./assets/logo.png" height="20" width="20" slot="icon">
       带自定义图标
     </mt-button>
-    <mt-button @click.native="handleClick">点击触发 handleClick</mt-button>
+    <mt-button @click.native="handleClick">点击触发 handleClick</mt-button> -->
 
-    
-    <!-- <mt-tabbar v-model="selected">
-  <mt-tab-item id="外卖">
-    <img slot="icon" src="../assets/100x100.png">
-    外卖
-  </mt-tab-item>
-  <mt-tab-item id="订单">
-    <img slot="icon" src="../assets/100x100.png">
-    订单
-  </mt-tab-item>
-  <mt-tab-item id="发现">
-    <img slot="icon" src="../assets/100x100.png">
-    发现
-  </mt-tab-item>
-  <mt-tab-item id="我的">
-    <img slot="icon" src="../assets/100x100.png">
-    我的
-  </mt-tab-item>
-</mt-tabbar> -->
+  
     <router-view/>
   </div>
 </template>
@@ -76,14 +80,20 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  /* text-align: center; */
   color: #2c3e50;
-  margin-top: 60px;
+  margin-top: 40px;
 }
 h1{
   color:red;
 }
 .mysweetcolor{
   color:red;
+}
+.h1, .h2, .h3, h1, h2, h3{
+  margin-top:0;
+}
+.active{
+  color:blue
 }
 </style>
