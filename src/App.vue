@@ -12,19 +12,19 @@
 
     <!-- tabbar区域 -->
   <nav class="mui-bar mui-bar-tab">
-			<router-link class="mui-tab-item" to="/home">
+			<router-link class="my-tab-item" to="/home">
 				<span class="mui-icon mui-icon-home"></span>
 				<span class="mui-tab-label">首页</span>
 			</router-link>
-			<router-link class="mui-tab-item" to="/member">
+			<router-link class="my-tab-item" to="/member">
 				<span class="mui-icon mui-icon-email"></span>
 				<span class="mui-tab-label">会员</span>
 			</router-link>
-			<router-link class="mui-tab-item" to="/shopcar">
+			<router-link class="my-tab-item" to="/shopcar">
 				<span class="mui-icon mui-icon-extra mui-icon-extra-cart"><span class="mui-badge">9</span></span>
 				<span class="mui-tab-label">购物车</span>
 			</router-link>
-			<router-link class="mui-tab-item" to="/search">
+			<router-link class="my-tab-item" to="/search">
 				<span class="mui-icon mui-icon-search"></span>
 				<span class="mui-tab-label">搜索</span>
 			</router-link>
@@ -56,7 +56,7 @@
 
 <script>
 
-import { Toast } from 'mint-ui';
+// import { Toast } from 'mint-ui';
 
 export default {
   name: 'App',
@@ -113,8 +113,28 @@ h1{
 .v-enter-active, .v-leave-active{
   transition: all 0.4s;
 }
-
+/* 切换页面返回键闪动问题 */
+.mint-button{
+  height: inherit;
+}
 .mint-header{
   z-index:99
+}
+
+.mui-bar-tab .my-tab-item.mui-active {
+    color: #007aff;
+}
+
+/* 解决tabbar区域和图片列表js行为冲突的问题 */
+.mui-bar-tab .my-tab-item {
+    display: table-cell;
+    overflow: hidden;
+    width: 1%;
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #929292;
 }
 </style>

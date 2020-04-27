@@ -9,7 +9,8 @@ import router from './router'
 import  './globalConfig'
 Vue.config.productionTip = false
 
-
+import test from '../test/test'
+Vue.component('mytest',test)  //全局注册的组件在任何地方都能使用
 new Vue({
   el: '#app',
   router,
