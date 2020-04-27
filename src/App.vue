@@ -113,4 +113,8 @@ h1{
 .v-enter-active, .v-leave-active{
   transition: all 0.4s;
 }
+
+.mint-header{
+  z-index:99
+}
 </style>
