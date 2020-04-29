@@ -13,6 +13,9 @@ import './css/global.css'
 
 import './filter'
 
+//安装图片预览的插件
+import VuePreview from 'vue-preview'
+Vue.use(VuePreview)
 
 
 

@@ -10,6 +10,7 @@ import SearchContainer from '../components/tabbar/SearchContainer'
 import NewsList from '../components/news/NewsList'
 import NewsInfo from '../components/news/NewsInfo'
 import photoList from '../components/photo/photoList'
+import photoInfo from '../components/photo/photoInfo'
 Vue.use(Router)
 
 export default new Router({
@@ -24,6 +25,7 @@ export default new Router({
     {path:'/home/newslist',component:NewsList},
     {path:'/home/newsinfo/:id',component:NewsInfo,props:true}, 
     {path:'/home/photoList',component:photoList}, 
+    {path:'/home/photoInfo',component:photoInfo}, 
     {path: '/member',component: MemberContainer},
     {path: '/shopcar',component: ShopcarContainer},
     {path: '/search',component: SearchContainer},

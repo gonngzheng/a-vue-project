@@ -32,13 +32,13 @@
 			</div>
             
             <ul class="lazyul">
-                <li v-for="(item,i) in imgList" :key="i">
+                <router-link tar="li" to="/home/photoInfo" v-for="(item,i) in imgList" :key="i">
                     <img v-lazy="item.url">
                     <div class="info">
                         <h1 class="info-title">{{item.title}}</h1>
                         <div class="info-content">{{item.content}}</div>
                     </div>
-                </li>
+                </router-link>
             </ul>
         
     </div>
