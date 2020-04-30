@@ -23,7 +23,7 @@ export default new Router({
     //   ]
     },
     {path:'/home/newslist',component:NewsList},
-    {path:'/home/newsinfo/:id',component:NewsInfo,props:true}, 
+    {path:'/home/newsinfo/:id',component:NewsInfo,props:true,name:'newsInfo'}, 
     {path:'/home/photoList',component:photoList}, 
     {path:'/home/photoInfo',component:photoInfo}, 
     {path: '/member',component: MemberContainer},

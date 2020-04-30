@@ -4,8 +4,8 @@ import 'mint-ui/lib/style.css'
 
 Vue.use(MintUi)  //批量注册
 
-// import {Button} from 'mint-ui'
-// Vue.component(Button.name, Button)
+import {Button} from 'mint-ui'
+Vue.component('my-button', Button)
 
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 import './css/global.css'

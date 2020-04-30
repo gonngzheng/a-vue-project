@@ -4,7 +4,7 @@
     <!-- <img src="./assets/logo.png"> -->
     
        <mt-header fixed title="我的vue项目">
-      <span slot="left">
+      <span slot="left" @click="goBack" v-show="flag">
       <mt-button icon="back">返回</mt-button>
   </span>
   <!-- <mt-button icon="more" slot="right"></mt-button> -->
@@ -62,10 +62,22 @@ export default {
   name: 'App',
   data(){
     return{
-
+        flag:true
+    }
+  },
+  created(){
+      this.$route.path==='/home'?this.flag=false :this.flag= true
+  },
+  watch:{
+    '$route.path'(newval,oldval){
+      console.log(newval)
+      this.flag = newval==='/home'? false: true
     }
   },
   methods:{
+    goBack(){
+      this.$router.go(-1)
+    },
     handleClick(){
       Toast({
         message:'点不了哈哈',

@@ -12,7 +12,7 @@
 					</router-link>
 				</li>
 				<li class="mui-table-view-cell mui-media">
-					<a href="javascript:;">
+					<a href="javascript:;" @click="goDesc">
 						<img class="mui-media-object mui-pull-left" src="@/images/muwu.jpg">
 						<div class="mui-media-body">
 							木屋
@@ -21,7 +21,7 @@
 					</a>
 				</li>
 				<li class="mui-table-view-cell mui-media">
-					<a href="javascript:;">
+					<a href="javascript:;" @click="goByname">
 						<img class="mui-media-object mui-pull-left" src="@/images/cbd.jpg">
 						<div class="mui-media-body">
 							CBD
@@ -42,7 +42,17 @@
         },
         created(){
             this.timer = new Date()
-        }
+		},
+		methods:{
+			goDesc(){
+				//编程式导航
+				this.$router.push('/home/newsinfo/2')
+			},
+			goByname(){
+				this.$router.push({name:'newsInfo',params:{id:3}})
+				// this.$router.push({name:'newsInfo',query:{id:3}}) //query传参
+			}
+		}
     }
 </script>>
 <style scoped>
