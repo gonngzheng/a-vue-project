@@ -16,9 +16,9 @@
 		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/home/photoList">
 		                    <span class="mui-icon mui-icon-email"><span class="mui-badge">5</span></span>
 		                    <div class="mui-media-body">Email</div></router-link></li>
-		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
+		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/home/goodsInfo" href="#">
 		                    <span class="mui-icon mui-icon-chatbubble"></span>
-		                    <div class="mui-media-body">Chat</div></a></li>
+		                    <div class="mui-media-body">Chat</div></router-link></li>
 		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><a href="#">
 		                    <span class="mui-icon mui-icon-location"></span>
 		                    <div class="mui-media-body">location</div></a></li>
