@@ -39,6 +39,16 @@
                         </p>
                         <p>上架时间：</p>
 					</div>
+                    <p>使用this.$store.state:{{$store.state.count}}</p>
+                    <p>使用mapState:{{count}}</p>
+                    <p>{{msg}}</p>
+                    <!-- <input type="button" value="+1" @click="increment"> -->
+                    <input type="button" value="+1" @click="add">
+                    <input type="button" value="-1" @click="subC(2)">
+                    this.$store.getters获取：{{$store.getters.countInfo}}
+                    <h3>mapGetters的映射:{{countInfo}}</h3>
+                    <input type="button" value="使用mapActions映射" @click="newAdd">
+                    <input type="button" value="使用mapActions调用" @click="newSub(2)">
 				</div>
 				<div class="mui-card-footer btnarea">
                     <mt-button type="primary" size="large" plain>图文介绍</mt-button>
@@ -50,6 +60,7 @@
 </template>
 <script>
 import nobox from './nobox'
+import {mapState,mapMutations,mapGetters,mapActions} from 'vuex'
 export default {
     data(){
         return{
@@ -58,12 +69,34 @@ export default {
             selectCount:1, //用户选择的商品数量，默认为1
         }
     },
+    computed:{
+        msg(){
+            return '213'
+        },
+        //通过展开运算符，把state中的数据映射为计算属性，这样，能够让自己的计算属性和store中的属性并存
+        ...mapState(['count']),
+        ...mapGetters(['countInfo'])
+
+        },
     watch:{
         maxNum(newval,oldval){
             mui(".mui-numbox").numbox().setOption("maxNum",newval)
         }
     },
     methods:{
+        // increment(){
+        //     //点击按钮，让state中的count加一
+        //     //不推荐下面方式修改state
+        //     // this.$store.state.count++;
+        //     //如果在组件中，要调用mutations中的函数，只能通过this.$store.commit()来调用
+        //     this.$store.commit('add')
+        // },
+        ...mapMutations({
+            subC:'sub'
+        }),
+        ...mapMutations(['add']),
+        ...mapActions(['newAdd']),
+        ...mapActions(['newSub']),
         getSelectCount(val){
             //获取选择商品的数量
             this.selectCount=val
@@ -93,8 +126,15 @@ export default {
             this.flag=!this.flag;
         },
         addToCart(){
+            //点击加入购物车
             this.flag=!this.flag
-        }
+            //调用mutations中的addToCart
+           // this.$store.commit('addToCart',{id:2,count:this.selectCount})
+           //直接调用mapMutations中的方法
+              this.addToCar({id:3,count:this.selectCount})
+              console.log(this.$store.state.cart)
+        },
+        ...mapMutations(['addToCar'])
     },
     components:{
         nobox

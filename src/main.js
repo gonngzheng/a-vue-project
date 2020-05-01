@@ -11,9 +11,13 @@ Vue.config.productionTip = false
 
 import test from '../test/test'
 Vue.component('mytest',test)  //全局注册的组件在任何地方都能使用
+//vuex的使用
+import store from './store'
+
 new Vue({
   el: '#app',
   router,
+  store,  //将创建的共享状态对象，挂载到Vue实例中，这样，所有的组件就可以直接从store中获取全局的对象
   components: { App},
   template: '<App/>'
 })
