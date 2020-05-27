@@ -41,7 +41,8 @@
             }
         },
         created(){
-            this.timer = new Date()
+			this.timer = new Date()
+			console.log(this.$route,'1')
 		},
 		methods:{
 			goDesc(){

@@ -44,9 +44,6 @@
             this.getLunbotu()
         },
         methods:{
-            a(){
-                Toast('1')
-            },
             async getLunbotu(){
                 // const {data} = this.$http.get('/api/getIunbo');
                 // console.log(data)

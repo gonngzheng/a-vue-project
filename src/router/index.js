@@ -23,7 +23,7 @@ export default new Router({
     //     {path:'newslist',component:NewsList},
     //   ]
     },
-    {path:'/home/newslist',component:()=>import ('../components/news/NewsList')},
+    {path:'/home/newslist',component:()=>import ('../components/news/NewsList'),meta:['新闻列表','新闻详情']},
     {path:'/home/newsinfo/:id',component:NewsInfo,props:true,name:'newsInfo'}, 
     {path:'/home/photoList',component:photoList}, 
     {path:'/home/photoInfo',component:photoInfo}, 
