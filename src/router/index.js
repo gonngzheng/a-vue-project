@@ -3,11 +3,10 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import Login from '@/components/account/Login'
 import Reg from '@/components/account/Reg'
-import HomeContainer from '../components/tabbar/HomeContainer'
 import MemberContainer from '../components/tabbar/MemberContainer'
 import ShopcarContainer from '../components/tabbar/ShopcarContainer'
 import SearchContainer from '../components/tabbar/SearchContainer'
-import NewsList from '../components/news/NewsList'
+
 import NewsInfo from '../components/news/NewsInfo'
 import photoList from '../components/photo/photoList'
 import photoInfo from '../components/photo/photoInfo'
@@ -17,13 +16,14 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {path: '/',redirect:'/home'},
-    {path: '/home',component: HomeContainer,
+{path: '/home',component: ()=>import ('../components/tabbar/HomeContainer')
+
     // children:
     //   [
     //     {path:'newslist',component:NewsList},
     //   ]
     },
-    {path:'/home/newslist',component:NewsList},
+    {path:'/home/newslist',component:()=>import ('../components/news/NewsList')},
     {path:'/home/newsinfo/:id',component:NewsInfo,props:true,name:'newsInfo'}, 
     {path:'/home/photoList',component:photoList}, 
     {path:'/home/photoInfo',component:photoInfo}, 

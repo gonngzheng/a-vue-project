@@ -45,7 +45,7 @@
       带自定义图标
     </mt-button>
     <mt-button @click.native="handleClick">点击触发 handleClick</mt-button> -->
-
+<mt-button @click.native="handleClick">点击触发 handleClick</mt-button>
     <transition>
       <router-view/>
 
@@ -56,7 +56,7 @@
 
 <script>
 
-// import { Toast } from 'mint-ui';
+import { Toast } from 'mint-ui';
 
 export default {
   name: 'App',

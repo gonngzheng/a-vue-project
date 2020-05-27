@@ -9,7 +9,7 @@
         </mt-swipe>
 
         <div class="mui-content">
-		        <ul class="mui-table-view mui-grid-view mui-grid-9">
+		        <ul class="mui-table-view mui-grid-view mui-grid-9" @click="a">
 		            <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3"><router-link to="/home/newslist">
 		                    <span class="mui-icon mui-icon-home"></span>
 		                    <div class="mui-media-body">Home</div></router-link></li>
@@ -44,6 +44,9 @@
             this.getLunbotu()
         },
         methods:{
+            a(){
+                Toast('1')
+            },
             async getLunbotu(){
                 // const {data} = this.$http.get('/api/getIunbo');
                 // console.log(data)
